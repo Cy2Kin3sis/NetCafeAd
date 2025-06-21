@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import 'home.dart';
+
 
 void main() => runApp(const NetCafeAd());
 
@@ -37,7 +39,7 @@ class _NetCafeAdState extends State<NetCafeAd> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'To-Do List',
+      title: 'BDGiT NE(@)T Cafe',
       theme: ThemeData(
         brightness: Brightness.light,
         primarySwatch: Colors.grey,
@@ -63,7 +65,7 @@ class _NetCafeAdState extends State<NetCafeAd> {
         ),
       ),
       themeMode: _themeMode,
-      //home: TodoHome(themeMode: _themeMode, onThemeChanged: _toggleTheme),
+      home: BDGiT(onThemeChanged: _toggleTheme, themeMode: _themeMode),
       debugShowCheckedModeBanner: false,
     );
   }
