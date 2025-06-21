@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class MeetTheTeamScreen extends StatelessWidget {
-  final List<Map<String, String>> executives = [
+  static final List<Map<String, String>> executives = [
     {
       'name': 'Tammy Baloslos',
       'role': 'Co-Founder and CEO – Handles overall operations and customer service.',
