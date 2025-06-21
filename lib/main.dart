@@ -39,7 +39,7 @@ class _NetCafeAdState extends State<NetCafeAd> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'BDGiT NE(@)T Cafe',
+      title: 'BDGiT NE@T Cafe',
       theme: ThemeData(
         brightness: Brightness.light,
         primarySwatch: Colors.grey,

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class BDGiT extends StatelessWidget {
+class BDGiT extends StatefulWidget {
   final Function(bool) onThemeChanged;
   final ThemeMode themeMode;
 
@@ -11,8 +11,13 @@ class BDGiT extends StatelessWidget {
   });
 
   @override
+  BDGiTState createState() => BDGiTState();
+}
+
+class BDGiTState extends State<BDGiT> {
+  @override
   Widget build(BuildContext context) {
-    final isDark = themeMode == ThemeMode.dark;
+    final isDark = widget.themeMode == ThemeMode.dark;
 
     return Scaffold(
       appBar: AppBar(
@@ -23,7 +28,7 @@ class BDGiT extends StatelessWidget {
               Icon(isDark ? Icons.dark_mode : Icons.light_mode),
               Switch(
                 value: isDark,
-                onChanged: onThemeChanged,
+                onChanged: widget.onThemeChanged,
                 activeColor: Colors.amber,
               ),
             ],
@@ -54,7 +59,7 @@ class BDGiT extends StatelessWidget {
           const SizedBox(height: 30),
           const Divider(thickness: 1),
           const SizedBox(height: 10),
-          Text('🥐 Café Highlights (BD)', style: Theme.of(context).textTheme.titleLarge,),
+          Text('🥐 Café Highlights (BD)', style: Theme.of(context).textTheme.titleLarge),
           const SizedBox(height: 10),
           ...[
             'Freshly Brewed Coffee & Teas',
@@ -64,9 +69,9 @@ class BDGiT extends StatelessWidget {
             'Iced Tea, Soft Drinks',
           ].map((highlight) => ListTile(
             leading: const Icon(Icons.check_circle_outline, color: Colors.amber),
-            title: Text(highlight)
+            title: Text(highlight),
           )),
-          Text('💻 Services Offered (GiT)', style: Theme.of(context).textTheme.titleLarge,),
+          Text('💻 Services Offered (GiT)', style: Theme.of(context).textTheme.titleLarge),
           const SizedBox(height: 10),
           ...[
             'Piso WiFi',
@@ -79,7 +84,6 @@ class BDGiT extends StatelessWidget {
             leading: const Icon(Icons.check_circle_outline, color: Colors.amber),
             title: Text(service),
           )),
-
           const SizedBox(height: 20),
           Center(
             child: Text(
