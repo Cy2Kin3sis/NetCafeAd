@@ -3,18 +3,32 @@ import 'package:flutter/material.dart';
 class BDGiT extends StatefulWidget {
   final Function(bool) onThemeChanged;
   final ThemeMode themeMode;
-
-  const BDGiT({
-    super.key,
-    required this.onThemeChanged,
-    required this.themeMode,
-  });
+  const BDGiT({super.key, required this.onThemeChanged, required this.themeMode});
 
   @override
   BDGiTState createState() => BDGiTState();
 }
 
 class BDGiTState extends State<BDGiT> {
+  final PageController _pageController = PageController();
+
+  int _currentPage = 0;
+
+  void _nextPage() {
+    if (_currentPage < 2) {
+      setState(() => _currentPage++);
+      _pageController.animateToPage(_currentPage, duration: const Duration(milliseconds: 300), curve: Curves.easeInOut);
+    }
+  }
+
+  void _previousPage() {
+    if (_currentPage > 0) {
+      setState(() => _currentPage--);
+      _pageController.animateToPage(_currentPage, duration: const Duration(milliseconds: 300), curve: Curves.easeInOut,
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final isDark = widget.themeMode == ThemeMode.dark;
