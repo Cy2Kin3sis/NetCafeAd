@@ -9,7 +9,7 @@ class ToggleBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      title: Text(title),
+      title: Text(title, style: TextStyle(fontWeight: FontWeight.bold)),
       automaticallyImplyLeading: false,
       actions: [
         Padding(
@@ -25,7 +25,6 @@ class ToggleBar extends StatelessWidget implements PreferredSizeWidget {
       ],
     );
   }
-
   @override
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 }
