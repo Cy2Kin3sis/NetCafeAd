@@ -18,11 +18,7 @@ class ToggleBar extends StatelessWidget implements PreferredSizeWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               Icon(isDark ? Icons.dark_mode : Icons.light_mode),
-              Switch(
-                value: isDark,
-                onChanged: onThemeChanged,
-                activeColor: Colors.amber,
-              ),
+              Switch(value: isDark, onChanged: onThemeChanged, activeColor: Colors.amber),
             ],
           ),
         )
