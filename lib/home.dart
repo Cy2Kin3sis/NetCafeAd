@@ -81,9 +81,15 @@ class BDGiTState extends State<BDGiT> {
           const SizedBox(height: 30),
           const Divider(thickness: 1),
           const SizedBox(height: 10),
-          Text(
-            '🥐 Café Highlights (BD)',
-            style: Theme.of(context).textTheme.titleLarge,
+          Row(
+            children: [
+              Icon(Icons.breakfast_dining_outlined),
+              const SizedBox(width: 8),
+              Text(
+                'Café Highlights (BD)',
+                style: Theme.of(context).textTheme.titleLarge,
+              ),
+            ]
           ),
           const SizedBox(height: 10),
           ...[
@@ -97,9 +103,15 @@ class BDGiTState extends State<BDGiT> {
             title: Text(highlight),
           )),
           const SizedBox(height: 20),
-          Text(
-            '💻 Services Offered (GiT)',
-            style: Theme.of(context).textTheme.titleLarge,
+          Row(
+            children: [
+              Icon(Icons.computer_outlined),
+              const SizedBox(width: 8),
+              Text(
+                'Services Offered (GiT)',
+                style: Theme.of(context).textTheme.titleLarge,
+              ),
+            ],
           ),
           const SizedBox(height: 10),
           ...[
