@@ -24,7 +24,7 @@ class MeetTheTeamScreen extends StatelessWidget {
     },
   ];
 
-  MeetTheTeamScreen({super.key});
+  const MeetTheTeamScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
