@@ -16,7 +16,7 @@ class BDGiTState extends State<BDGiT> {
   int _currentPage = 0;
 
   // Get the list of pages
-  List<Widget> get _pages => [_buildCafeInfoPage(), _buildMeetTheTeamPage()];
+  List<Widget> get _pages => [_buildCafeInfoPage(), _buildMeetTheTeamPage(), _buildBusinessLorePage()];
 
   void _nextPage() {
     if (_currentPage < _pages.length - 1) {
@@ -212,6 +212,51 @@ class BDGiTState extends State<BDGiT> {
             ),
           );
         },
+      ),
+    );
+  }
+
+  Widget _buildBusinessLorePage() {
+    final isDark = widget.themeMode == ThemeMode.dark;
+    final history = BusinessLoreScreen.timeline;
+
+    return Scaffold(
+      appBar: ToggleBar(title: 'Company History', isDark: isDark, themeMode: widget.themeMode, onThemeChanged: widget.onThemeChanged),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: ListView.builder(
+          itemCount: history.length,
+          itemBuilder: (context, index) {
+            final item = history[index];
+            return Padding(
+              padding: const EdgeInsets.symmetric(vertical: 12.0),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(
+                    width: 80,
+                    child: Text(
+                      item['year']!,
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16,
+                        color: Theme.of(context).colorScheme.primary,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(width: 12),
+                  Expanded(
+                    child: Text(
+                      item['event']!,
+                      style: const TextStyle(fontSize: 15),
+                    ),
+                  ),
+                ],
+              ),
+            );
+          },
+
+        ),
       ),
     );
   }
