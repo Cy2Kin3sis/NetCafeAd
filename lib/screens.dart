@@ -1,26 +1,28 @@
 import 'package:flutter/material.dart';
 
+import 'actual_names.dart';
+
 class MeetTheTeamScreen extends StatelessWidget {
   static final List<Map<String, String>> executives = [
     {
-      'name': 'Tammy Baloslos',
+      'name': '${exf[0]} ${exl[0]}',
       'role': 'Co-Founder and CEO – Leads the entire café operation with a focus on strategy, growth, and big-picture direction. Makes key decisions about expansion, partnerships, and brand identity while ensuring the café stays ahead of trends in tech and lifestyle.',
     },
     {
-      'name': 'Igop Datkilab',
-      'role': 'Co-Founder and COO - Oversees the day-to-day customer experience—everything from the quality of food and beverages to staff service and cleanliness. Ensures operations run smoothly, guests are happy, and service standards are met or exceeded.',
+      'name': 'Buk Tungsahur',
+      'role': 'Co-Founder and CCO – Shapes the café\'s identity and how it\'s seen by the world. Leads marketing, promotions, design, and communication. From posters and events to social media and ad campaigns, this is the storyteller who brings customers through the door.',
     },
     {
-      'name': 'Gabrel Galatasaray',
-      'role': 'Co-Founder and CTO – Manages all things tech: high-speed internet, gaming rigs, software, cybersecurity, and digital systems. Ensures the café stays cutting-edge and the tech just works—whether it\'s cloud gaming or coffee-ordering tablets.',
+      'name': '${exf[2]} ${exl[2]}',
+      'role': 'Co-Founder and COO - Oversees the day-to-day customer experience—everything from the quality of food and beverages to staff service and cleanliness. Ensures operations run smoothly, guests are happy, and service standards are met or exceeded.',
     },
     {
       'name': 'Dugkat Ibalictad',
       'role': 'Co-Founder and CFO  – Handles budgeting, pricing strategy, payroll, and financial planning. Keeps the business profitable while balancing investments in equipment, food supply, and marketing.',
     },
     {
-      'name': 'Buk Tungsahur',
-      'role': 'Co-Founder and CCO – Shapes the café\'s identity and how it\'s seen by the world. Leads marketing, promotions, design, and communication. From posters and events to social media and ad campaigns, this is the storyteller who brings customers through the door.',
+      'name': 'Gabrel Galatasaray',
+      'role': 'Co-Founder and CTO – Manages all things tech: high-speed internet, gaming rigs, software, cybersecurity, and digital systems. Ensures the café stays cutting-edge and the tech just works—whether it\'s cloud gaming or coffee-ordering tablets.',
     },
   ];
 
