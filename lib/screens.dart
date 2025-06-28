@@ -73,3 +73,15 @@ class MeetTheTeamScreen extends StatelessWidget {
     );
   }
 }
+
+class BusinessLoreScreen extends StatelessWidget {
+
+  const BusinessLoreScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+
+    );
+  }
+}
