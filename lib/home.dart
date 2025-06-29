@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'screens.dart';
+import 'contents.dart';
 import 'widgets.dart';
 
 class BDGiT extends StatefulWidget {
@@ -165,10 +165,10 @@ class BDGiTState extends State<BDGiT> {
       appBar: ToggleBar(title: 'Meet the Team', isDark: isDark, themeMode: widget.themeMode, onThemeChanged: widget.onThemeChanged),
       body: ListView.separated(
         padding: const EdgeInsets.all(16),
-        itemCount: MeetTheTeamScreen.executives.length,
+        itemCount: executives.length,
         separatorBuilder: (context, index) => const SizedBox(height: 12),
         itemBuilder: (context, index) {
-          final member = MeetTheTeamScreen.executives[index];
+          final member = executives[index];
           return Card(
             elevation: 2,
             shape: RoundedRectangleBorder(
@@ -218,7 +218,7 @@ class BDGiTState extends State<BDGiT> {
 
   Widget _buildBusinessLorePage() {
     final isDark = widget.themeMode == ThemeMode.dark;
-    final history = BusinessLoreScreen.timeline;
+    final history = timeline;
 
     return Scaffold(
       appBar: ToggleBar(title: 'Company History', isDark: isDark, themeMode: widget.themeMode, onThemeChanged: widget.onThemeChanged),
