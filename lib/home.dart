@@ -16,7 +16,7 @@ class BDGiTState extends State<BDGiT> {
   int _currentPage = 0;
 
   // Get the list of pages
-  List<Widget> get _pages => [_buildCafeInfoPage(), _buildMeetTheTeamPage(), _buildBusinessLorePage()];
+  List<Widget> get _pages => [cafeInfo(), meetTheTeam(), businessLore()];
 
   void _nextPage() {
     if (_currentPage < _pages.length - 1) {
@@ -46,7 +46,7 @@ class BDGiTState extends State<BDGiT> {
     super.dispose();
   }
 
-  Widget _buildCafeInfoPage() {
+  Widget cafeInfo() {
     final isDark = widget.themeMode == ThemeMode.dark;
     return Scaffold(
       appBar: ToggleBar(title: 'BDGiT NE@T Café', isDark: isDark, themeMode: widget.themeMode, onThemeChanged: widget.onThemeChanged),
@@ -159,7 +159,7 @@ class BDGiTState extends State<BDGiT> {
     );
   }
 
-  Widget _buildMeetTheTeamPage() {
+  Widget meetTheTeam() {
     final isDark = widget.themeMode == ThemeMode.dark;
     return Scaffold(
       appBar: ToggleBar(title: 'Meet the Team', isDark: isDark, themeMode: widget.themeMode, onThemeChanged: widget.onThemeChanged),
@@ -216,7 +216,7 @@ class BDGiTState extends State<BDGiT> {
     );
   }
 
-  Widget _buildBusinessLorePage() {
+  Widget businessLore() {
     final isDark = widget.themeMode == ThemeMode.dark;
     final history = timeline;
 
