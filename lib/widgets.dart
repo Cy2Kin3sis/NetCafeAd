@@ -28,3 +28,31 @@ class ToggleBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 }
+
+/*
+class Scrollable extends StatelessWidget {
+  final List<Widget> children;
+
+}
+*/
+
+class BlogPost extends StatelessWidget {
+  final String title;
+  final DateTime date;
+  final String content;
+
+  const BlogPost({super.key, required this.title, required this.date, required this.content});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.all(8),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(title, textAlign: TextAlign.center, style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+        ],
+      ),
+    );
+  }
+}
