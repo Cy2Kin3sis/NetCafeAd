@@ -49,7 +49,7 @@ class BlogPost extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text('Published on $date', style: b3.copyWith(fontStyle: FontStyle.italic, color: Colors.blueGrey)), sbh12,
-              Text(content, style: b2),
+              Text(content, style: b2, textAlign: TextAlign.justify),
             ],
           ),
         ),
