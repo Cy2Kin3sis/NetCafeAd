@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'constants.dart';
 import 'widgets.dart';
 
 class CafeInfoScreen extends StatelessWidget {
@@ -29,12 +30,11 @@ class CafeInfoScreen extends StatelessWidget {
           Center(
             child: Column(
               children: [
-                Icon(Icons.computer, size: 100, color: Theme.of(context).colorScheme.secondary),
-                const SizedBox(height: 10),
+                Icon(Icons.computer, size: 100, color: Theme.of(context).colorScheme.secondary), sbh12,
                 Text('Welcome to BDGiT NE@T Café',
-                    style: Theme.of(context).textTheme.headlineSmall?.copyWith(fontWeight: FontWeight.bold),
-                    textAlign: TextAlign.center),
-                const SizedBox(height: 6),
+                  style: Theme.of(context).textTheme.headlineSmall?.copyWith(fontWeight: FontWeight.bold),
+                  textAlign: TextAlign.center,
+                ), sbh8,
                 Text(
                   'Beverages, Delicacies, Gaming, Internet, and Tech!',
                   style: Theme.of(context).textTheme.bodyLarge,
@@ -43,17 +43,13 @@ class CafeInfoScreen extends StatelessWidget {
               ],
             ),
           ),
-          const SizedBox(height: 30),
-          const Divider(thickness: 1),
-          const SizedBox(height: 10),
+          sbh32, const Divider(thickness: 1), sbh12,
           Row(
             children: [
-              Icon(Icons.breakfast_dining_outlined),
-              const SizedBox(width: 8),
-              Text('Café Highlights (BD)', style: Theme.of(context).textTheme.titleLarge),
+              Icon(Icons.breakfast_dining_outlined), sbw8,
+              Text('Café Highlights (B.D.)', style: Theme.of(context).textTheme.titleLarge),
             ],
-          ),
-          const SizedBox(height: 10),
+          ), sbh12,
           ...[
             'Freshly Brewed Coffee & Teas',
             'Cupcakes, Pandesal',
@@ -64,15 +60,14 @@ class CafeInfoScreen extends StatelessWidget {
             leading: const Icon(Icons.check_circle_outline, color: Colors.amber),
             title: Text(highlight),
           )),
-          const SizedBox(height: 20),
+          sbh20,
           Row(
             children: [
               Icon(Icons.computer_outlined),
-              const SizedBox(width: 8),
+              sbw8,
               Text('Services Offered (GiT)', style: Theme.of(context).textTheme.titleLarge),
             ],
-          ),
-          const SizedBox(height: 10),
+          ), sbh12,
           ...[
             'Piso WiFi',
             'High-end Gaming PC Units',
@@ -83,19 +78,16 @@ class CafeInfoScreen extends StatelessWidget {
           ].map((service) => ListTile(
             leading: const Icon(Icons.check_circle_outline, color: Colors.amber),
             title: Text(service),
-          )),
-          const SizedBox(height: 20),
+          )), sbh20,
           Card(
             elevation: 2,
             child: Padding(
               padding: const EdgeInsets.all(16),
               child: Column(
                 children: [
-                  Icon(Icons.location_on, color: Colors.amber, size: 32),
-                  const SizedBox(height: 8),
+                  Icon(Icons.location_on, color: Colors.amber, size: 32), sbh8,
                   Text('Visit Us', style: Theme.of(context).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold)),
-                  const SizedBox(height: 8),
-                  Text(
+                  sbh8, Text(
                     '📍 420 Diamond St., Sigbin Avenue, Biringan\n📞 0900 012 3456',
                     style: Theme.of(context).textTheme.bodyMedium,
                     textAlign: TextAlign.center,
@@ -131,7 +123,7 @@ class MeetTheTeamScreen extends StatelessWidget {
       body: ListView.separated(
         padding: const EdgeInsets.all(16),
         itemCount: executives.length,
-        separatorBuilder: (context, index) => const SizedBox(height: 12),
+        separatorBuilder: (context, index) => sbh12,
         itemBuilder: (context, index) {
           final member = executives[index];
           return Card(
@@ -145,14 +137,12 @@ class MeetTheTeamScreen extends StatelessWidget {
                     radius: 25,
                     backgroundColor: Colors.amber.withAlpha(50),
                     child: const Icon(Icons.person, size: 30, color: Colors.amber),
-                  ),
-                  const SizedBox(width: 16),
+                  ), sbw16,
                   Expanded(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(member['name']!, style: Theme.of(context).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold)),
-                        const SizedBox(height: 4),
+                        Text(member['name']!, style: Theme.of(context).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold)), sbh4,
                         Text(member['role']!, style: Theme.of(context).textTheme.bodyMedium),
                       ],
                     ),
@@ -198,9 +188,8 @@ class BusinessLoreScreen extends StatelessWidget {
                   SizedBox(
                     width: 80,
                     child: Text(item['year']!, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16, color: Theme.of(context).colorScheme.primary)),
-                  ),
-                  const SizedBox(width: 12),
-                  Expanded(child: Text(item['event']!, style: const TextStyle(fontSize: 15))),
+                  ), sbw12,
+                  Expanded(child: Text(item['event']!, style: b2)),
                 ],
               ),
             );
