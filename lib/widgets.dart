@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:auto_size_text/auto_size_text.dart';
 import 'constants.dart';
 
 class ToggleBar extends StatelessWidget implements PreferredSizeWidget {
@@ -41,7 +41,7 @@ class BlogPost extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ExpansionTile(
-      title: Text(title),
+      title: AutoSizeText(title, maxLines: 1, minFontSize: 8),
       children: [
         Padding(
           padding: EdgeInsets.all(4),
