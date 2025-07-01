@@ -31,13 +31,6 @@ class ToggleBar extends StatelessWidget implements PreferredSizeWidget {
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 }
 
-/*
-class Scrollable extends StatelessWidget {
-  final List<Widget> children;
-
-}
-*/
-
 class BlogPost extends StatelessWidget {
   final String title;
   final String date;
