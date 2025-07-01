@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'constants.dart';
+
 class ToggleBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
   final bool isDark;
@@ -38,7 +40,7 @@ class Scrollable extends StatelessWidget {
 
 class BlogPost extends StatelessWidget {
   final String title;
-  final DateTime date;
+  final String date;
   final String content;
 
   const BlogPost({super.key, required this.title, required this.date, required this.content});
@@ -53,7 +55,8 @@ class BlogPost extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              //Text()
+              Text('Published on $date', style: b3.copyWith(fontStyle: FontStyle.italic, color: Colors.blueGrey)), sbh12,
+              Text(content, style: b2),
             ],
           ),
         ),
