@@ -35,26 +35,63 @@ class BlogPost extends StatelessWidget {
   final String title;
   final String date;
   final String content;
+  final bool isDark;
+  final ThemeMode themeMode;
+  final Function(bool) onThemeChanged;
 
-  const BlogPost({super.key, required this.title, required this.date, required this.content});
+  const BlogPost({
+    super.key,
+    required this.title,
+    required this.date,
+    required this.content,
+    required this.isDark,
+    required this.themeMode,
+    required this.onThemeChanged,
+  });
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final textColor = theme.textTheme.bodyMedium?.color ?? Colors.black87;
+
     return ExpansionTile(
-      title: AutoSizeText(title, maxLines: 1, minFontSize: 8),
-      backgroundColor: Colors.grey,
+      title: AutoSizeText(
+        title,
+        maxLines: 1,
+        minFontSize: 8,
+        style: theme.textTheme.titleMedium?.copyWith(
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+      backgroundColor: isDark
+          ? Colors.grey.shade800
+          : Colors.grey.shade400,
       children: [
         Padding(
-          padding: EdgeInsets.all(4),
+          padding: const EdgeInsets.all(8),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text('Published on $date', style: b3.copyWith(fontStyle: FontStyle.italic, color: Colors.blueGrey)), sbh12,
-              Text(content, style: b2.copyWith(height: 1.5), textAlign: TextAlign.justify),
+              Text(
+                'Published on $date',
+                style: b3.copyWith(
+                  fontStyle: FontStyle.italic,
+                  color: isDark ? Colors.grey[300] : Colors.blueGrey,
+                ),
+              ),
+              const SizedBox(height: 12),
+              Text(
+                content,
+                style: b2.copyWith(
+                  height: 1.5,
+                  color: textColor,
+                ),
+                textAlign: TextAlign.justify,
+              ),
             ],
           ),
         ),
-      ]
+      ],
     );
   }
 }

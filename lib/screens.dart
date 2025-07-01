@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'constants.dart';
+import 'contents.dart';
 import 'widgets.dart';
 
 class CafeInfoScreen extends StatelessWidget {
@@ -222,7 +223,7 @@ class CompanyBlogScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              BlogPost(title: 'New business arising in the international market this year', date: '11 March 2019', content: 'Since 2017, BDGiT has been operating in Biringan. It is an internet cafe with different gaming consoles. It also serves snacks such as taco, nachos, and beverages such as juice, iced tea, but not soft drinks.\n\nIn its 2 years of operation, it has constantly received positive remarks from gamers and known critics. It has received an A+ grade in terms of service. It also received a security badge for having no records of criminal offenses committed in the establishment.\n\nForeigners have expressed interest in the internet café. A number of them want a branch of BDGiT on their respective countries. Serbian Milos Petrović rated the shop 98/100 and requests for a franchise of it established in Belgrade. American Joshua Adams is amused about the tight security the shop has and hoped internet shops in Minnesota would implement those rules.')
+              BlogPost(title: 'New business arising in the international market this year', date: '11 March 2019', content: march1119,isDark: isDark, themeMode: themeMode, onThemeChanged: onThemeChanged)
             ]
           ),
         ),
