@@ -42,6 +42,7 @@ class BlogPost extends StatelessWidget {
   Widget build(BuildContext context) {
     return ExpansionTile(
       title: AutoSizeText(title, maxLines: 1, minFontSize: 8),
+      backgroundColor: Colors.grey,
       children: [
         Padding(
           padding: EdgeInsets.all(4),
@@ -49,7 +50,7 @@ class BlogPost extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text('Published on $date', style: b3.copyWith(fontStyle: FontStyle.italic, color: Colors.blueGrey)), sbh12,
-              Text(content, style: b2, textAlign: TextAlign.justify),
+              Text(content, style: b2.copyWith(height: 1.5), textAlign: TextAlign.justify),
             ],
           ),
         ),
