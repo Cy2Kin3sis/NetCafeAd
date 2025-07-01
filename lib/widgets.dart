@@ -45,14 +45,19 @@ class BlogPost extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.all(8),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(title, textAlign: TextAlign.center, style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-        ],
-      ),
+    return ExpansionTile(
+      title: Text(title),
+      children: [
+        Padding(
+          padding: EdgeInsets.all(4),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              //Text()
+            ],
+          ),
+        ),
+      ]
     );
   }
 }
