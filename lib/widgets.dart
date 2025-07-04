@@ -34,7 +34,7 @@ class ToggleBar extends StatelessWidget implements PreferredSizeWidget {
 class BlogPost extends StatelessWidget {
   final String title;
   final String date;
-  final String content;
+  final List<Widget> content;
   final bool isDark;
   final ThemeMode themeMode;
   final Function(bool) onThemeChanged;
@@ -52,7 +52,7 @@ class BlogPost extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final textColor = theme.textTheme.bodyMedium?.color ?? Colors.black87;
+    //final textColor = theme.textTheme.bodyMedium?.color ?? Colors.black87;
 
     return ExpansionTile(
       title: AutoSizeText(
@@ -80,14 +80,7 @@ class BlogPost extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 12),
-              Text(
-                content,
-                style: b2.copyWith(
-                  height: 1.5,
-                  color: textColor,
-                ),
-                textAlign: TextAlign.justify,
-              ),
+              Column(children: content),
             ],
           ),
         ),
