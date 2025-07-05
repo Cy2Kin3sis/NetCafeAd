@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'actuals.dart';
 import 'constants.dart';
+import 'widgets.dart';
 
 final List<Map<String, String>> executives = [
   {
@@ -61,4 +62,13 @@ final List<Widget> march1119 = [
   Text('Since 2017, BDGiT has been operating in Biringan. It is an internet cafe with different gaming consoles. It also serves snacks such as taco, nachos, and beverages such as juice, iced tea, but not soft drinks.', textAlign: TextAlign.justify), sbh8,
   Text('In its 2 years of operation, it has constantly received positive remarks from gamers and known critics. It has received an A+ grade in terms of service. It also received a security badge for having no records of criminal offenses committed in the establishment.', textAlign: TextAlign.justify), sbh8,
   Text('Foreigners have expressed interest in the internet café. A number of them want a branch of BDGiT on their respective countries. Serbian Milos Petrović rated the shop 5 stars and requests for a franchise of it established in Belgrade. American Joshua Adams is amused about the tight security the shop has and hoped internet shops in Minnesota would implement those rules.', textAlign: TextAlign.justify),
+];
+
+final List<Widget> may1621 = [
+  SlideshowWidget(images: floorPlan), sbh8,
+  Text('Architect Jotaro Abe proposed a new floor plan for a new branch to be completed and opened in Ticbalang Drive, Biringan in 2023, with hopes that things will slowly go back to normal.', textAlign: TextAlign.justify), sbh8,
+  Text('The first floor will feature a welcoming frontline/frontdesk, a gaming area integrated with a food counter, and a kitchen area tucked to the back for streamlined service. A staircase at the center will lead visitors up to the second floor.', textAlign: TextAlign.justify), sbh8,
+  Text('The second floor will house the café’s PC area, a stockroom for equipment and supplies, and a VIP room—a quieter, more exclusive space for top-tier guests or private sessions.', textAlign: TextAlign.justify), sbh8,
+  Text('Though the internet café industry has been impacted heavily by the pandemic, the planned 2023 launch aligns with growing hopes that life—and businesses—will return to normal.', textAlign: TextAlign.justify), sbh8,
+  Text('“People need spaces to reconnect,” Abe stated. “This café is designed not just for gaming, but for community.”', textAlign: TextAlign.justify),
 ];
