@@ -35,3 +35,6 @@ const SizedBox sbw24 = SizedBox(width: 24);
 const SizedBox sbw32 = SizedBox(width: 32);
 
 TextStyle? largeTitle(BuildContext context) => Theme.of(context).textTheme.titleLarge;
+TextStyle? mediumTitle(BuildContext context) => Theme.of(context).textTheme.titleMedium;
+
+const Color themeColor = Colors.amber;
