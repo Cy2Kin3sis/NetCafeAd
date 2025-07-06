@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'actuals.dart';
 import 'constants.dart';
 import 'contents.dart';
 import 'widgets.dart';
@@ -85,7 +86,7 @@ class CafeInfoScreen extends StatelessWidget {
                   Icon(Icons.location_on, color: Colors.amber, size: 32), sbh8,
                   Text('Visit Us', style: Theme.of(context).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold)),
                   sbh8, Text(
-                    '📍 420 Diamond St., Sigbin Avenue, Biringan\n📞 0900 012 3456',
+                    '📍 420 Diamond St., Sigbin Avenue, Biringan\n📞 $contactNum',
                     style: Theme.of(context).textTheme.bodyMedium,
                     textAlign: TextAlign.center,
                   ),
