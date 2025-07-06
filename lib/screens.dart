@@ -221,7 +221,7 @@ class CompanyBlogScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               BlogPost(title: 'New business arising in the international market this year', date: '11 March 2019', content: march1119, isDark: isDark, themeMode: themeMode, onThemeChanged: onThemeChanged), sbh8,
-              BlogPost(title: 'New building to rise in 2023', date: '16 May 2021', content: may1621,isDark: isDark, themeMode: themeMode, onThemeChanged: onThemeChanged)
+              BlogPost(title: 'New building to rise in 2023', date: '16 May 2021', content: may1621, isDark: isDark, themeMode: themeMode, onThemeChanged: onThemeChanged)
             ]
           ),
         ),
