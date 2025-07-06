@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'constants.dart';
 import 'contents.dart';
 import 'screens.dart';
 
@@ -83,8 +84,8 @@ class BDGiTState extends State<BDGiT> {
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       color: _currentPage == index
-                          ? Colors.amber
-                          : Colors.amber.withAlpha(77),
+                          ? themeColor
+                          : themeColor.withAlpha(77),
                     ),
                   ),
                 ),
@@ -105,7 +106,7 @@ class BDGiTState extends State<BDGiT> {
                       shape: BoxShape.circle,
                     ),
                     child: IconButton(
-                      icon: const Icon(Icons.arrow_back, color: Colors.amber),
+                      icon: const Icon(Icons.arrow_back, color: themeColor),
                       onPressed: _previousPage,
                     ),
                   ),
@@ -126,7 +127,7 @@ class BDGiTState extends State<BDGiT> {
                       shape: BoxShape.circle,
                     ),
                     child: IconButton(
-                      icon: const Icon(Icons.arrow_forward, color: Colors.amber),
+                      icon: const Icon(Icons.arrow_forward, color: themeColor),
                       onPressed: _nextPage,
                     ),
                   ),

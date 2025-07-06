@@ -57,7 +57,7 @@ class CafeInfoScreen extends StatelessWidget {
             'Cupcakes, Pandesal, Sandwiches',
             'Cookies, Light Snacks, Pancit Canton',
           ].map((highlight) => ListTile(
-            leading: const Icon(Icons.check_circle_outline, color: Colors.amber),
+            leading: const Icon(Icons.check_circle_outline, color: themeColor),
             title: Text(highlight),
           )),
           sbh20,
@@ -74,7 +74,7 @@ class CafeInfoScreen extends StatelessWidget {
             'Computer/Laptop Rental (Browsing, Research, Gaming)',
             'Printing, Scanning, Photocopying, & Lamination',
           ].map((service) => ListTile(
-            leading: const Icon(Icons.check_circle_outline, color: Colors.amber),
+            leading: const Icon(Icons.check_circle_outline, color: themeColor),
             title: Text(service),
           )), sbh20,
           Card(
@@ -83,8 +83,8 @@ class CafeInfoScreen extends StatelessWidget {
               padding: const EdgeInsets.all(16),
               child: Column(
                 children: [
-                  Icon(Icons.location_on, color: Colors.amber, size: 32), sbh8,
-                  Text('Visit Us', style: Theme.of(context).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold)),
+                  Icon(Icons.location_on, color: themeColor, size: 32), sbh8,
+                  Text('Visit Us', style: mediumTitle(context)?.copyWith(fontWeight: FontWeight.bold)),
                   sbh8, Text(
                     '📍 420 Diamond St., Sigbin Avenue, Biringan\n📞 $contactNum',
                     style: Theme.of(context).textTheme.bodyMedium,
@@ -133,14 +133,14 @@ class MeetTheTeamScreen extends StatelessWidget {
                 children: [
                   CircleAvatar(
                     radius: 25,
-                    backgroundColor: Colors.amber.withAlpha(50),
-                    child: const Icon(Icons.person, size: 30, color: Colors.amber),
+                    backgroundColor: themeColor.withAlpha(50),
+                    child: const Icon(Icons.person, size: 30, color: themeColor),
                   ), sbw16,
                   Expanded(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(member['name']!, style: Theme.of(context).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold)), sbh4,
+                        Text(member['name']!, style: mediumTitle(context)?.copyWith(fontWeight: FontWeight.bold)), sbh4,
                         Text(member['role']!, style: Theme.of(context).textTheme.bodyMedium),
                       ],
                     ),
