@@ -33,3 +33,5 @@ const SizedBox sbw16 = SizedBox(width: 16);
 const SizedBox sbw20 = SizedBox(width: 20);
 const SizedBox sbw24 = SizedBox(width: 24);
 const SizedBox sbw32 = SizedBox(width: 32);
+
+TextStyle? largeTitle(BuildContext context) => Theme.of(context).textTheme.titleLarge;

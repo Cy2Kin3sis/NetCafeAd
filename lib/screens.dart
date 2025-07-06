@@ -49,7 +49,7 @@ class CafeInfoScreen extends StatelessWidget {
           Row(
             children: [
               Icon(Icons.breakfast_dining_outlined), sbw8,
-              Text('Café Highlights (B.D.)', style: Theme.of(context).textTheme.titleLarge),
+              Text('Café Highlights (B.D.)', style: largeTitle(context)),
             ],
           ), sbh12,
           ...[
@@ -65,7 +65,7 @@ class CafeInfoScreen extends StatelessWidget {
             children: [
               Icon(Icons.computer_outlined),
               sbw8,
-              Text('Services Offered (G.I.T.)', style: Theme.of(context).textTheme.titleLarge),
+              Text('Services Offered (G.I.T.)', style: largeTitle(context)),
             ],
           ), sbh12,
           ...[
