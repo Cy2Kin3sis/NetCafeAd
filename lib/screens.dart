@@ -53,10 +53,8 @@ class CafeInfoScreen extends StatelessWidget {
           ), sbh12,
           ...[
             'Freshly Brewed Coffee & Teas',
-            'Cupcakes, Pandesal',
-            'Sandwiches, Cookies',
-            'Light Snacks, Pancit Canton',
-            'Iced Tea, Soft Drinks',
+            'Cupcakes, Pandesal, Sandwiches',
+            'Cookies, Light Snacks, Pancit Canton',
           ].map((highlight) => ListTile(
             leading: const Icon(Icons.check_circle_outline, color: Colors.amber),
             title: Text(highlight),
@@ -66,16 +64,14 @@ class CafeInfoScreen extends StatelessWidget {
             children: [
               Icon(Icons.computer_outlined),
               sbw8,
-              Text('Services Offered (GiT)', style: Theme.of(context).textTheme.titleLarge),
+              Text('Services Offered (G.I.T.)', style: Theme.of(context).textTheme.titleLarge),
             ],
           ), sbh12,
           ...[
-            'Piso WiFi',
+            'Piso WiFi, Load Selling',
             'High-end Gaming PC Units',
             'Computer/Laptop Rental (Browsing, Research, Gaming)',
-            'Printing & Scanning',
-            'Photocopying & Lamination',
-            'Load Selling',
+            'Printing, Scanning, Photocopying, & Lamination',
           ].map((service) => ListTile(
             leading: const Icon(Icons.check_circle_outline, color: Colors.amber),
             title: Text(service),
