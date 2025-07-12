@@ -23,17 +23,13 @@ class _NetCafeAdState extends State<NetCafeAd> {
   Future<void> _loadTheme() async {
     final prefs = await SharedPreferences.getInstance();
     final isDark = prefs.getBool('isDark') ?? false;
-    setState(() {
-      _themeMode = isDark ? ThemeMode.dark : ThemeMode.light;
-    });
+    setState(() => _themeMode = isDark ? ThemeMode.dark : ThemeMode.light);
   }
 
   Future<void> _toggleTheme(bool isDark) async {
     final prefs = await SharedPreferences.getInstance();
     await prefs.setBool('isDark', isDark);
-    setState(() {
-      _themeMode = isDark ? ThemeMode.dark : ThemeMode.light;
-    });
+    setState(() => _themeMode = isDark ? ThemeMode.dark : ThemeMode.light);
   }
 
   @override
