@@ -115,44 +115,42 @@ class MeetTheTeamScreen extends StatelessWidget {
   });
 
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: ToggleBar(title: 'Meet the Team', isDark: isDark, themeMode: themeMode, onThemeChanged: onThemeChanged),
-      body: ListView.separated(
-        padding: const EdgeInsets.all(16),
-        itemCount: executives.length,
-        separatorBuilder: (context, index) => sbh12,
-        itemBuilder: (context, index) {
-          final member = executives[index];
-          return Card(
-            elevation: 2,
-            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-            child: Padding(
-              padding: const EdgeInsets.all(16),
-              child: Row(
-                children: [
-                  CircleAvatar(
-                    radius: 25,
-                    backgroundColor: themeColor.withAlpha(50),
-                    child: const Icon(Icons.person, size: 30, color: themeColor),
-                  ), sbw16,
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(member['name']!, style: mediumTitle(context)?.copyWith(fontWeight: FontWeight.bold)), sbh4,
-                        Text(member['role']!, style: Theme.of(context).textTheme.bodyMedium),
-                      ],
-                    ),
+  Widget build(BuildContext context) => Scaffold(
+    appBar: ToggleBar(title: 'Meet the Team', isDark: isDark, themeMode: themeMode, onThemeChanged: onThemeChanged),
+    body: ListView.separated(
+      padding: const EdgeInsets.all(16),
+      itemCount: executives.length,
+      separatorBuilder: (context, index) => sbh12,
+      itemBuilder: (context, index) {
+        final member = executives[index];
+        return Card(
+          elevation: 2,
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+          child: Padding(
+            padding: const EdgeInsets.all(16),
+            child: Row(
+              children: [
+                CircleAvatar(
+                  radius: 25,
+                  backgroundColor: themeColor.withAlpha(50),
+                  child: const Icon(Icons.person, size: 30, color: themeColor),
+                ), sbw16,
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(member['name']!, style: mediumTitle(context)?.copyWith(fontWeight: FontWeight.bold)), sbh4,
+                      Text(member['role']!, style: Theme.of(context).textTheme.bodyMedium),
+                    ],
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
-          );
+          ),
+        );
         },
-      ),
-    );
-  }
+    ),
+  );
 }
 
 class BusinessLoreScreen extends StatelessWidget {
