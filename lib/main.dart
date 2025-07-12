@@ -3,7 +3,6 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import 'home.dart';
 
-
 void main() => runApp(const NetCafeAd());
 
 class NetCafeAd extends StatefulWidget {
