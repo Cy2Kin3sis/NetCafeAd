@@ -77,19 +77,19 @@ class BDGiTState extends State<BDGiT> {
         unselectedItemColor: Colors.grey,
         items: const [
           BottomNavigationBarItem(
-            icon: Icon(Icons.info),
-            label: 'Info',
+            icon: Icon(Icons.home),
+            label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.people),
+            icon: Icon(Icons.groups),
             label: 'Team',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.history),
-            label: 'Lore',
+            label: 'History',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.article),
+            icon: Icon(Icons.newspaper),
             label: 'Blog',
           ),
         ],
