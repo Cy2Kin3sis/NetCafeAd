@@ -16,8 +16,6 @@ class BDGiTState extends State<BDGiT> {
   int _currentIndex = 0;
   final PageController _pageController = PageController();
 
-  // Define titles for each tab
-
   // Get the list of pages
   List<Widget> get _pages => [
     CafeInfoScreen(themeMode: widget.themeMode, isDark: widget.themeMode == ThemeMode.dark, onThemeChanged: widget.onThemeChanged),
@@ -27,14 +25,8 @@ class BDGiTState extends State<BDGiT> {
   ];
 
   void _onTabTapped(int index) {
-    setState(() {
-      _currentIndex = index;
-    });
-    _pageController.animateToPage(
-      index,
-      duration: const Duration(milliseconds: 300),
-      curve: Curves.easeInOut,
-    );
+    setState(() => _currentIndex = index);
+    _pageController.animateToPage(index, duration: const Duration(milliseconds: 300), curve: Curves.easeInOut);
   }
 
   @override
