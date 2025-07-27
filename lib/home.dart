@@ -20,28 +20,10 @@ class BDGiTState extends State<BDGiT> {
 
   // Get the list of pages
   List<Widget> get _pages => [
-    CafeInfoScreen(
-        themeMode: widget.themeMode,
-        isDark: widget.themeMode == ThemeMode.dark,
-        onThemeChanged: widget.onThemeChanged
-    ),
-    MeetTheTeamScreen(
-        themeMode: widget.themeMode,
-        isDark: widget.themeMode == ThemeMode.dark,
-        onThemeChanged: widget.onThemeChanged,
-        executives: executives
-    ),
-    BusinessLoreScreen(
-        themeMode: widget.themeMode,
-        isDark: widget.themeMode == ThemeMode.dark,
-        onThemeChanged: widget.onThemeChanged,
-        timeline: timeline
-    ),
-    CompanyBlogScreen(
-        themeMode: widget.themeMode,
-        isDark: widget.themeMode == ThemeMode.dark,
-        onThemeChanged: widget.onThemeChanged
-    ),
+    CafeInfoScreen(themeMode: widget.themeMode, isDark: widget.themeMode == ThemeMode.dark, onThemeChanged: widget.onThemeChanged),
+    MeetTheTeamScreen(themeMode: widget.themeMode, isDark: widget.themeMode == ThemeMode.dark, onThemeChanged: widget.onThemeChanged, executives: executives),
+    BusinessLoreScreen(themeMode: widget.themeMode, isDark: widget.themeMode == ThemeMode.dark, onThemeChanged: widget.onThemeChanged, timeline: timeline),
+    CompanyBlogScreen(themeMode: widget.themeMode, isDark: widget.themeMode == ThemeMode.dark, onThemeChanged: widget.onThemeChanged),
   ];
 
   void _onTabTapped(int index) {
