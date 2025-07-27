@@ -183,7 +183,7 @@ class BusinessLoreScreen extends StatelessWidget {
                 children: [
                   SizedBox(
                     width: 80,
-                    child: Text(item['year']!, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16, color: Theme.of(context).colorScheme.primary)),
+                    child: Text(item['year']!, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
                   ), sbw12,
                   Expanded(child: Text(item['event']!, style: b2)),
                 ],
