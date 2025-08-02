@@ -168,8 +168,7 @@ class BusinessLoreScreen extends StatelessWidget {
   });
 
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
+  Widget build(BuildContext context) => Scaffold(
       appBar: ToggleBar(title: 'Company History', isDark: isDark, themeMode: themeMode, onThemeChanged: onThemeChanged),
       body: ListView.builder(
         itemCount: timeline.length,
@@ -190,7 +189,6 @@ class BusinessLoreScreen extends StatelessWidget {
         },
       ),
     );
-  }
 }
 
 class CompanyBlogScreen extends StatelessWidget {
