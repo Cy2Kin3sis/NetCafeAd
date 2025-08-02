@@ -3,8 +3,10 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import 'home.dart';
 
+/// Main method
 void main() => runApp(const NetCafeAd());
 
+/// Main app class
 class NetCafeAd extends StatefulWidget {
   const NetCafeAd({super.key});
   @override
@@ -19,12 +21,16 @@ class _NetCafeAdState extends State<NetCafeAd> {
     _loadTheme();
   }
 
+  /// Loads the app's theme.
+  ///
+  /// Has both dark or light mode.
   Future<void> _loadTheme() async {
     final prefs = await SharedPreferences.getInstance();
     final isDark = prefs.getBool('isDark') ?? false;
     setState(() => _themeMode = isDark ? ThemeMode.dark : ThemeMode.light);
   }
 
+  /// Toggles between light and dark mode.
   Future<void> _toggleTheme(bool isDark) async {
     final prefs = await SharedPreferences.getInstance();
     await prefs.setBool('isDark', isDark);
