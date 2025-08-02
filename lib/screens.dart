@@ -5,6 +5,9 @@ import 'constants.dart';
 import 'contents.dart';
 import 'widgets.dart';
 
+/// Main screen.
+///
+/// It shows the services offered by the cafe.
 class CafeInfoScreen extends StatelessWidget {
   final ThemeMode themeMode;
   final bool isDark;
@@ -153,6 +156,7 @@ class MeetTheTeamScreen extends StatelessWidget {
   );
 }
 
+/// Shows the "history" of the cafe.
 class BusinessLoreScreen extends StatelessWidget {
   final ThemeMode themeMode;
   final bool isDark;
@@ -189,6 +193,7 @@ class BusinessLoreScreen extends StatelessWidget {
   );
 }
 
+/// Company blog.
 class CompanyBlogScreen extends StatelessWidget {
   final ThemeMode themeMode;
   final bool isDark;
