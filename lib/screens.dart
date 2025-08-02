@@ -171,26 +171,23 @@ class BusinessLoreScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: ToggleBar(title: 'Company History', isDark: isDark, themeMode: themeMode, onThemeChanged: onThemeChanged),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: ListView.builder(
-          itemCount: timeline.length,
-          itemBuilder: (context, index) {
-            final item = timeline[index];
-            return Padding(
-              padding: const EdgeInsets.symmetric(vertical: 12.0),
-              child: Row(
-                children: [
-                  SizedBox(
-                    width: 80,
-                    child: Text(item['year']!, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
-                  ), sbw12,
-                  Expanded(child: Text(item['event']!, style: b2)),
-                ],
-              ),
-            );
-          },
-        ),
+      body: ListView.builder(
+        itemCount: timeline.length,
+        itemBuilder: (context, index) {
+          final item = timeline[index];
+          return Padding(
+            padding: const EdgeInsets.symmetric(vertical: 12.0),
+            child: Row(
+              children: [
+                SizedBox(
+                  width: 80,
+                  child: Text(item['year']!, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
+                ), sbw12,
+                Expanded(child: Text(item['event']!, style: b2)),
+              ],
+            ),
+          );
+        },
       ),
     );
   }
