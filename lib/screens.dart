@@ -169,26 +169,24 @@ class BusinessLoreScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Scaffold(
-      appBar: ToggleBar(title: 'Company History', isDark: isDark, themeMode: themeMode, onThemeChanged: onThemeChanged),
-      body: ListView.builder(
-        itemCount: timeline.length,
-        itemBuilder: (context, index) {
-          final item = timeline[index];
-          return Padding(
-            padding: const EdgeInsets.symmetric(vertical: 12.0),
-            child: Row(
-              children: [
-                SizedBox(
-                  width: 80,
-                  child: Text(item['year']!, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
-                ), sbw12,
-                Expanded(child: Text(item['event']!, style: b2)),
-              ],
-            ),
-          );
-        },
-      ),
-    );
+    appBar: ToggleBar(title: 'Company History', isDark: isDark, themeMode: themeMode, onThemeChanged: onThemeChanged),
+    body: ListView.builder(
+      itemCount: timeline.length,
+      itemBuilder: (context, index) {
+        final item = timeline[index];
+        return Padding(
+          padding: const EdgeInsets.symmetric(vertical: 12.0),
+          child: Row(children: [
+            SizedBox(
+              width: 80,
+              child: Text(item['year']!, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
+            ), sbw12,
+            Expanded(child: Text(item['event']!, style: b2)),
+          ]),
+        );
+      },
+    ),
+  );
 }
 
 class CompanyBlogScreen extends StatelessWidget {
@@ -204,21 +202,16 @@ class CompanyBlogScreen extends StatelessWidget {
   });
 
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: ToggleBar(title: 'Company Blog', isDark: isDark, themeMode: themeMode, onThemeChanged: onThemeChanged),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(4),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              BlogPost(title: 'New business arising in the international market this year', date: '11 March 2019', content: march1119, isDark: isDark, themeMode: themeMode, onThemeChanged: onThemeChanged), sbh8,
-              BlogPost(title: 'New building to rise in 2023', date: '16 May 2021', content: may1621, isDark: isDark, themeMode: themeMode, onThemeChanged: onThemeChanged)
-            ]
-          ),
-        ),
+  Widget build(BuildContext context) => Scaffold(
+    appBar: ToggleBar(title: 'Company Blog', isDark: isDark, themeMode: themeMode, onThemeChanged: onThemeChanged),
+    body: SingleChildScrollView(
+      child: Padding(
+        padding: const EdgeInsets.all(4),
+        child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+          BlogPost(title: 'New business arising in the international market this year', date: '11 March 2019', content: march1119, isDark: isDark, themeMode: themeMode, onThemeChanged: onThemeChanged), sbh8,
+          BlogPost(title: 'New building to rise in 2023', date: '16 May 2021', content: may1621, isDark: isDark, themeMode: themeMode, onThemeChanged: onThemeChanged)
+        ]),
       ),
-    );
-  }
+    ),
+  );
 }
