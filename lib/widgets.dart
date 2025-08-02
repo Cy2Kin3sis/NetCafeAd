@@ -10,25 +10,21 @@ class ToggleBar extends StatelessWidget implements PreferredSizeWidget {
   final ThemeMode themeMode;
   final Function(bool) onThemeChanged;
   const ToggleBar({super.key, required this.title, required this.isDark, required this.themeMode, required this.onThemeChanged});
+
   @override
-  Widget build(BuildContext context) {
-    return AppBar(
-      title: Text(title, style: TextStyle(fontWeight: FontWeight.bold)),
-      automaticallyImplyLeading: false,
-      actions: [
-        Padding(
-          padding: const EdgeInsets.only(right: 8.0),
-          child: Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Icon(isDark ? Icons.dark_mode : Icons.light_mode),
-              Switch(value: isDark, onChanged: onThemeChanged, activeColor: Colors.amber),
-            ],
-          ),
-        )
-      ],
-    );
-  }
+  Widget build(BuildContext context) => AppBar(
+    title: Text(title, style: TextStyle(fontWeight: FontWeight.bold)),
+    automaticallyImplyLeading: false,
+    actions: [
+      Padding(
+        padding: const EdgeInsets.only(right: 8.0),
+        child: Row(mainAxisSize: MainAxisSize.min, children: [
+          Icon(isDark ? Icons.dark_mode : Icons.light_mode),
+          Switch(value: isDark, onChanged: onThemeChanged, activeColor: Colors.amber),
+        ]),
+      )
+    ],
+  );
   @override
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 }
@@ -57,30 +53,15 @@ class BlogPost extends StatelessWidget {
     //final textColor = theme.textTheme.bodyMedium?.color ?? Colors.black87;
 
     return ExpansionTile(
-      title: AutoSizeText(
-        title,
-        maxLines: 1,
-        minFontSize: 8,
-        style: theme.textTheme.titleMedium?.copyWith(
-          fontWeight: FontWeight.bold,
-        ),
-      ),
-      backgroundColor: isDark
-          ? Colors.grey.shade800
-          : Colors.grey.shade400,
+      title: AutoSizeText(title, maxLines: 1, minFontSize: 8, style: theme.textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold)),
+      backgroundColor: isDark ? Colors.grey.shade800 : Colors.grey.shade400,
       children: [
         Padding(
           padding: const EdgeInsets.all(8),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                'Published on $date',
-                style: b3.copyWith(
-                  fontStyle: FontStyle.italic,
-                  color: isDark ? Colors.grey[300] : Colors.blueGrey,
-                ),
-              ),
+              Text('Published on $date', style: b3.copyWith(fontStyle: FontStyle.italic, color: isDark ? Colors.grey[300] : Colors.blueGrey)),
               const SizedBox(height: 12),
               Column(children: content),
             ],
