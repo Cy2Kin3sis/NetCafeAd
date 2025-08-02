@@ -126,48 +126,36 @@ class _SlideshowWidgetState extends State<SlideshowWidget> {
   }
 
   @override
-  Widget build(BuildContext context) {
-    return Stack(
-      alignment: Alignment.bottomCenter,
-      children: [
-        AspectRatio(
-          aspectRatio: 16 / 9,
-          child: PageView.builder(
-            controller: _pageController,
-            itemCount: _images.length,
-            itemBuilder: (context, index) {
-              return Image.network(
-                _images[index],
-                fit: BoxFit.cover,
-                loadingBuilder: (context, child, progress) =>
-                progress == null ? child : const Center(child: CircularProgressIndicator()),
-              );
-            },
-            onPageChanged: (index) => setState(() => _currentPage = index),
+  Widget build(BuildContext context) => Stack(
+    alignment: Alignment.bottomCenter,
+    children: [
+      AspectRatio(
+        aspectRatio: 16 / 9,
+        child: PageView.builder(
+          controller: _pageController,
+          itemCount: _images.length,
+          itemBuilder: (context, index) => Image.network(
+            _images[index],
+            fit: BoxFit.cover,
+            loadingBuilder: (context, child, progress) =>
+            progress == null ? child : const Center(child: CircularProgressIndicator()),
           ),
+          onPageChanged: (index) => setState(() => _currentPage = index),
         ),
-        // Dots indicator
-        Positioned(
-          bottom: 10,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: List.generate(
-              _images.length,
-                  (index) => Container(
-                margin: const EdgeInsets.symmetric(horizontal: 3),
-                width: 8,
-                height: 8,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: _currentPage == index
-                      ? Colors.amber
-                      : Colors.white.withAlpha(102),
-                ),
-              ),
-            ),
-          ),
+      ),
+      // Dots indicator
+      Positioned(
+        bottom: 10,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: List.generate(_images.length, (index) => Container(
+            margin: const EdgeInsets.symmetric(horizontal: 3),
+            width: 8,
+            height: 8,
+            decoration: BoxDecoration(shape: BoxShape.circle, color: _currentPage == index ? Colors.amber : Colors.white.withAlpha(102)),
+          )),
         ),
-      ],
-    );
-  }
+      ),
+    ],
+  );
 }
