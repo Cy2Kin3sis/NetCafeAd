@@ -74,6 +74,8 @@ class BlogPost extends StatelessWidget {
   }
 }
 
+
+/// Reusable slideshow.
 class SlideshowWidget extends StatefulWidget {
   final List<String> images;
   final bool autoPlay;
