@@ -3,6 +3,7 @@ import 'actuals.dart';
 import 'constants.dart';
 import 'widgets.dart';
 
+/// List of the "executives" of the fictional company.
 final List<Map<String, String>> executives = [
   {
     'name': '${exf[0]} ${exl[0]}',
@@ -57,6 +58,9 @@ final List<Map<String, String>> timeline = [
   },
 ];
 
+/// Blog article.
+///
+/// [march1119] means March 11, 2019, the supposed date of the blog.
 final List<Widget> march1119 = [
   Text('Since 2017, BDGiT has been operating in Biringan. It is an internet cafe with different gaming consoles. It also serves snacks such as taco, nachos, and beverages such as juice, iced tea, but not soft drinks.', textAlign: TextAlign.justify), sbh8,
   Text('Since 2017, BDGiT has been operating in Biringan. It is an internet cafe with different gaming consoles. It also serves snacks such as taco, nachos, and beverages such as juice, iced tea, but not soft drinks.', textAlign: TextAlign.justify), sbh8,
@@ -64,6 +68,9 @@ final List<Widget> march1119 = [
   Text('Foreigners have expressed interest in the internet café. A number of them want a branch of BDGiT on their respective countries. Serbian Milos Petrović rated the shop 5 stars and requests for a franchise of it established in Belgrade. American Joshua Adams is amused about the tight security the shop has and hoped internet shops in Minnesota would implement those rules.', textAlign: TextAlign.justify),
 ];
 
+/// Blog article.
+///
+/// [may1621] nmeans May 16, 2021, the supposed date of the blog.
 final List<Widget> may1621 = [
   SlideshowWidget(images: floorPlan), sbh8,
   Text('Architect Jotaro Abe proposed a new floor plan for a new branch to be completed and opened in Ticbalang Drive, Biringan in 2023, with hopes that things will slowly go back to normal.', textAlign: TextAlign.justify), sbh8,
