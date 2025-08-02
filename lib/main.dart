@@ -32,36 +32,24 @@ class _NetCafeAdState extends State<NetCafeAd> {
   }
 
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'BDGiT NE@T Cafe',
-      theme: ThemeData(
-        brightness: Brightness.light,
-        primarySwatch: Colors.grey,
-        scaffoldBackgroundColor: Colors.white,
-        appBarTheme: AppBarTheme(
-          backgroundColor: Colors.amber,
-          foregroundColor: Colors.black87,
-        ),
-        textTheme: TextTheme(
-          bodyMedium: TextStyle(fontWeight: FontWeight.bold, color: Colors.black87),
-        ),
-      ),
-      darkTheme: ThemeData(
-        brightness: Brightness.dark,
-        scaffoldBackgroundColor: Colors.grey[900],
-        primaryColor: Colors.amber,
-        appBarTheme: AppBarTheme(
-          backgroundColor: Colors.black87,
-          foregroundColor: Colors.amber,
-        ),
-        textTheme: TextTheme(
-          bodyMedium: TextStyle(fontWeight: FontWeight.bold, color: Colors.white70),
-        ),
-      ),
-      themeMode: _themeMode,
-      home: BDGiT(onThemeChanged: _toggleTheme, themeMode: _themeMode),
-      debugShowCheckedModeBanner: false,
-    );
-  }
+  Widget build(BuildContext context) => MaterialApp(
+    title: 'BDGiT NE@T Cafe',
+    theme: ThemeData(
+      brightness: Brightness.light,
+      primarySwatch: Colors.grey,
+      scaffoldBackgroundColor: Colors.white,
+      appBarTheme: AppBarTheme(backgroundColor: Colors.amber, foregroundColor: Colors.black87),
+      textTheme: TextTheme(bodyMedium: TextStyle(fontWeight: FontWeight.bold, color: Colors.black87)),
+    ),
+    darkTheme: ThemeData(
+      brightness: Brightness.dark,
+      scaffoldBackgroundColor: Colors.grey[900],
+      primaryColor: Colors.amber,
+      appBarTheme: AppBarTheme(backgroundColor: Colors.black87, foregroundColor: Colors.amber),
+      textTheme: TextTheme(bodyMedium: TextStyle(fontWeight: FontWeight.bold, color: Colors.white70)),
+    ),
+    themeMode: _themeMode,
+    home: BDGiT(onThemeChanged: _toggleTheme, themeMode: _themeMode),
+    debugShowCheckedModeBanner: false,
+  );
 }
