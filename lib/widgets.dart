@@ -31,6 +31,7 @@ class ToggleBar extends StatelessWidget implements PreferredSizeWidget {
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 }
 
+/// Reusable widget for blog posts on the blog screen.
 class BlogPost extends StatelessWidget {
   final String title;
   final String date;
