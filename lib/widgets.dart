@@ -53,7 +53,6 @@ class BlogPost extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    //final textColor = theme.textTheme.bodyMedium?.color ?? Colors.black87;
 
     return ExpansionTile(
       title: AutoSizeText(title, maxLines: 1, minFontSize: 8, style: theme.textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold)),
