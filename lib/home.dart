@@ -3,6 +3,8 @@ import 'constants.dart';
 import 'contents.dart';
 import 'screens.dart';
 
+
+/// Home page.
 class BDGiT extends StatefulWidget {
   final Function(bool) onThemeChanged;
   final ThemeMode themeMode;
@@ -12,11 +14,15 @@ class BDGiT extends StatefulWidget {
   @override
   BDGiTState createState() => BDGiTState();
 }
+
+/// Home page.
+///
+/// Uses state of [BDGiT].
 class BDGiTState extends State<BDGiT> {
   int _currentIndex = 0;
   final PageController _pageController = PageController();
 
-  // Get the list of pages
+  /// Gets the list of pages.
   List<Widget> get _pages => [
     CafeInfoScreen(themeMode: widget.themeMode, isDark: widget.themeMode == ThemeMode.dark, onThemeChanged: widget.onThemeChanged),
     MeetTheTeamScreen(themeMode: widget.themeMode, isDark: widget.themeMode == ThemeMode.dark, onThemeChanged: widget.onThemeChanged, executives: executives),
