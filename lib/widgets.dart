@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'constants.dart';
 
+
+/// Reusable app bar that toggles between light and dark mode.
 class ToggleBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
   final bool isDark;
