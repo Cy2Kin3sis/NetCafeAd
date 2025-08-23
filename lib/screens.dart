@@ -1,3 +1,7 @@
+/// screens.dart
+///
+/// This file contains contents of the app, screen by screen.
+library;
 import 'package:flutter/material.dart';
 import 'actuals.dart';
 import 'constants.dart';
