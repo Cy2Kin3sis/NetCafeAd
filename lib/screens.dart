@@ -5,14 +5,13 @@ import 'constants.dart';
 import 'contents.dart';
 import 'widgets.dart';
 
-/// Main screen.
-///
-/// It shows the services offered by the cafe.
 class CafeInfoScreen extends StatelessWidget {
   final ThemeMode themeMode;
   final bool isDark;
   final Function(bool) onThemeChanged;
-
+  /// Main screen.
+  ///
+  /// It shows the services offered by the cafe.
   const CafeInfoScreen({
     super.key,
     required this.themeMode,
@@ -103,6 +102,7 @@ class CafeInfoScreen extends StatelessWidget {
   }
 }
 
+/// "Executive team" screen.
 class MeetTheTeamScreen extends StatelessWidget {
   final ThemeMode themeMode;
   final bool isDark;
