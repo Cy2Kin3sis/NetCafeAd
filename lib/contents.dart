@@ -27,6 +27,7 @@ final List<Map<String, String>> executives = [
   },
 ];
 
+/// Company lore timeline.
 final List<Map<String, String>> timeline = [
   {
     'year': '1993',
