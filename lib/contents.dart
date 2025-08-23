@@ -1,3 +1,8 @@
+/// contents.dart
+///
+/// This file contains contents of the app that will be displayed.
+library;
+
 import 'package:flutter/material.dart';
 import 'actuals.dart';
 import 'constants.dart';
