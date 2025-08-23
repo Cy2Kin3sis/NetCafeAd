@@ -1,8 +1,12 @@
+/// home.dart
+///
+/// This file represents the app's home page.
+library;
+
 import 'package:flutter/material.dart';
 import 'constants.dart';
 import 'contents.dart';
 import 'screens.dart';
-
 
 /// Home page.
 class BDGiT extends StatefulWidget {
