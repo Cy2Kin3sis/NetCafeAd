@@ -12,110 +12,79 @@ class CafeInfoScreen extends StatelessWidget {
   /// Main screen.
   ///
   /// It shows the services offered by the cafe.
-  const CafeInfoScreen({
-    super.key,
-    required this.themeMode,
-    required this.isDark,
-    required this.onThemeChanged,
-  });
+  const CafeInfoScreen({super.key, required this.themeMode, required this.isDark, required this.onThemeChanged});
 
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: ToggleBar(
-        title: 'BDGiT NE@T Café',
-        isDark: isDark,
-        themeMode: themeMode,
-        onThemeChanged: onThemeChanged,
-      ),
-      body: ListView(
-        padding: const EdgeInsets.all(20),
-        children: [
-          Center(
-            child: Column(
-              children: [
-                Icon(Icons.computer, size: 100, color: Theme.of(context).colorScheme.secondary), sbh12,
-                Text('Welcome to BDGiT NE@T Café',
-                  style: Theme.of(context).textTheme.headlineSmall?.copyWith(fontWeight: FontWeight.bold),
-                  textAlign: TextAlign.center,
-                ), sbh8,
-                Text(
-                  'Beverages, Delicacies, Gaming, Internet, and Tech!',
-                  style: Theme.of(context).textTheme.bodyLarge,
-                  textAlign: TextAlign.center,
-                ),
-              ],
+  Widget build(BuildContext context) => Scaffold(
+    appBar: ToggleBar(title: 'BDGiT NE@T Café', isDark: isDark, themeMode: themeMode, onThemeChanged: onThemeChanged),
+    body: ListView(
+      padding: const EdgeInsets.all(20),
+      children: [
+        Center(
+          child: Column(children: [
+            Icon(Icons.computer, size: 100, color: Theme.of(context).colorScheme.secondary), sbh12,
+            Text(
+              'Welcome to BDGiT NE@T Café',
+              style: Theme.of(context).textTheme.headlineSmall?.copyWith(fontWeight: FontWeight.bold),
+              textAlign: TextAlign.center,
+            ), sbh8,
+            Text(
+              'Beverages, Delicacies, Gaming, Internet, and Tech!',
+              style: Theme.of(context).textTheme.bodyLarge,
+              textAlign: TextAlign.center,
             ),
-          ),
-          sbh32, const Divider(thickness: 1), sbh12,
-          Row(
-            children: [
-              Icon(Icons.breakfast_dining_outlined), sbw8,
-              Text('Café Highlights (B.D.)', style: largeTitle(context)),
-            ],
-          ), sbh12,
-          ...[
-            'Freshly Brewed Coffee & Teas',
-            'Cupcakes, Pandesal, Sandwiches',
-            'Cookies, Light Snacks, Pancit Canton',
-          ].map((highlight) => ListTile(
-            leading: const Icon(Icons.check_circle_outline, color: themeColor),
-            title: Text(highlight),
-          )),
-          sbh20,
-          Row(
-            children: [
-              Icon(Icons.computer_outlined),
-              sbw8,
-              Text('Services Offered (G.I.T.)', style: largeTitle(context)),
-            ],
-          ), sbh12,
-          ...[
-            'Piso WiFi, Load Selling',
-            'High-end Gaming PC Units',
-            'Computer/Laptop Rental (Browsing, Research, Gaming)',
-            'Printing, Scanning, Photocopying, & Lamination',
-          ].map((service) => ListTile(
-            leading: const Icon(Icons.check_circle_outline, color: themeColor),
-            title: Text(service),
-          )), sbh20,
-          Card(
-            elevation: 2,
-            child: Padding(
-              padding: const EdgeInsets.all(16),
-              child: Column(
-                children: [
-                  Icon(Icons.location_on, color: themeColor, size: 32), sbh8,
-                  Text('Visit Us', style: mediumTitle(context)?.copyWith(fontWeight: FontWeight.bold)),
-                  sbh8, Text(
-                    '📍 420 Diamond St., Sigbin Avenue, Biringan\n📞 $contactNum',
-                    style: Theme.of(context).textTheme.bodyMedium,
-                    textAlign: TextAlign.center,
-                  ),
-                ],
+          ]),
+        ),
+        sbh32, const Divider(thickness: 1), sbh12,
+        Row(children: [
+          Icon(Icons.breakfast_dining_outlined), sbw8,
+          Text('Café Highlights (B.D.)', style: largeTitle(context)),
+        ]), sbh12,
+        ...[
+          'Freshly Brewed Coffee & Teas',
+          'Cupcakes, Pandesal, Sandwiches',
+          'Cookies, Light Snacks, Pancit Canton',
+        ].map((highlight) => ListTile(
+          leading: const Icon(Icons.check_circle_outline, color: themeColor),
+          title: Text(highlight),
+        )), sbh20,
+        Row(children: [
+          Icon(Icons.computer_outlined), sbw8,
+          Text('Services Offered (G.I.T.)', style: largeTitle(context)),
+        ]), sbh12,
+        ...[
+          'Piso WiFi, Load Selling',
+          'High-end Gaming PC Units',
+          'Computer/Laptop Rental (Browsing, Research, Gaming)',
+          'Printing, Scanning, Photocopying, & Lamination',
+        ].map((service) => ListTile(leading: const Icon(Icons.check_circle_outline, color: themeColor), title: Text(service))), sbh20,
+        Card(
+          elevation: 2,
+          child: Padding(
+            padding: const EdgeInsets.all(16),
+            child: Column(children: [
+              Icon(Icons.location_on, color: themeColor, size: 32), sbh8,
+              Text('Visit Us', style: mediumTitle(context)?.copyWith(fontWeight: FontWeight.bold)), sbh8,
+              Text(
+                '📍 420 Diamond St., Sigbin Avenue, Biringan\n📞 $contactNum',
+                style: Theme.of(context).textTheme.bodyMedium,
+                textAlign: TextAlign.center,
               ),
-            ),
+            ]),
           ),
-        ],
-      ),
-    );
-  }
+        ),
+      ],
+    ),
+  );
 }
 
-/// "Executive team" screen.
 class MeetTheTeamScreen extends StatelessWidget {
   final ThemeMode themeMode;
   final bool isDark;
   final Function(bool) onThemeChanged;
   final List<Map<String, String>> executives;
-
-  const MeetTheTeamScreen({
-    super.key,
-    required this.themeMode,
-    required this.isDark,
-    required this.onThemeChanged,
-    required this.executives,
-  });
+  /// "Executive team" screen.
+  const MeetTheTeamScreen({super.key, required this.themeMode, required this.isDark, required this.onThemeChanged, required this.executives});
 
   @override
   Widget build(BuildContext context) => Scaffold(
@@ -151,25 +120,18 @@ class MeetTheTeamScreen extends StatelessWidget {
             ),
           ),
         );
-        },
+      },
     ),
   );
 }
 
-/// Shows the "history" of the cafe.
 class BusinessLoreScreen extends StatelessWidget {
   final ThemeMode themeMode;
   final bool isDark;
   final Function(bool) onThemeChanged;
   final List<Map<String, String>> timeline;
-
-  const BusinessLoreScreen({
-    super.key,
-    required this.themeMode,
-    required this.isDark,
-    required this.onThemeChanged,
-    required this.timeline,
-  });
+  /// Shows the "history" of the cafe.
+  const BusinessLoreScreen({super.key, required this.themeMode, required this.isDark, required this.onThemeChanged, required this.timeline});
 
   @override
   Widget build(BuildContext context) => Scaffold(
@@ -181,10 +143,7 @@ class BusinessLoreScreen extends StatelessWidget {
         return Padding(
           padding: const EdgeInsets.symmetric(vertical: 12.0),
           child: Row(children: [
-            SizedBox(
-              width: 80,
-              child: Text(item['year']!, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
-            ), sbw12,
+            SizedBox(width: 80, child: Text(item['year']!, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16))), sbw12,
             Expanded(child: Text(item['event']!, style: b2)),
           ]),
         );
@@ -193,18 +152,12 @@ class BusinessLoreScreen extends StatelessWidget {
   );
 }
 
-/// Company blog.
 class CompanyBlogScreen extends StatelessWidget {
   final ThemeMode themeMode;
   final bool isDark;
   final Function(bool) onThemeChanged;
-
-  const CompanyBlogScreen({
-    super.key,
-    required this.themeMode,
-    required this.isDark,
-    required this.onThemeChanged,
-  });
+  /// Company blog.
+  const CompanyBlogScreen({super.key, required this.themeMode, required this.isDark, required this.onThemeChanged});
 
   @override
   Widget build(BuildContext context) => Scaffold(
