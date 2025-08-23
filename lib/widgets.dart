@@ -1,16 +1,20 @@
-import 'dart:async';
+/// widgets.dart
+///
+/// This file contains reusable widgets.
+library;
 
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'constants.dart';
 
 
-/// Reusable app bar that toggles between light and dark mode.
 class ToggleBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
   final bool isDark;
   final ThemeMode themeMode;
   final Function(bool) onThemeChanged;
+  /// Reusable app bar that toggles between light and dark mode.
   const ToggleBar({super.key, required this.title, required this.isDark, required this.themeMode, required this.onThemeChanged});
 
   @override
@@ -20,18 +24,21 @@ class ToggleBar extends StatelessWidget implements PreferredSizeWidget {
     actions: [
       Padding(
         padding: const EdgeInsets.only(right: 8.0),
-        child: Row(mainAxisSize: MainAxisSize.min, children: [
-          Icon(isDark ? Icons.dark_mode : Icons.light_mode),
-          Switch(value: isDark, onChanged: onThemeChanged, activeColor: Colors.amber),
-        ]),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Icon(isDark ? Icons.dark_mode : Icons.light_mode),
+            Switch(value: isDark, onChanged: onThemeChanged, activeColor: Colors.amber),
+          ],
+        ),
       )
     ],
   );
+
   @override
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 }
 
-/// Reusable widget for blog posts on the blog screen.
 class BlogPost extends StatelessWidget {
   final String title;
   final String date;
@@ -39,7 +46,7 @@ class BlogPost extends StatelessWidget {
   final bool isDark;
   final ThemeMode themeMode;
   final Function(bool) onThemeChanged;
-
+  /// Reusable widget for blog posts on the blog screen.
   const BlogPost({
     super.key,
     required this.title,
@@ -74,24 +81,18 @@ class BlogPost extends StatelessWidget {
   }
 }
 
-
-/// Reusable slideshow.
 class SlideshowWidget extends StatefulWidget {
   final List<String> images;
   final bool autoPlay;
   final Duration interval;
-
-  const SlideshowWidget({
-    super.key,
-    required this.images,
-    this.autoPlay = true,
-    this.interval = const Duration(seconds: 3),
-  });
+  /// Reusable slideshow.
+  const SlideshowWidget({super.key, required this.images, this.autoPlay = true, this.interval = const Duration(seconds: 3)});
 
   @override
   State<SlideshowWidget> createState() => _SlideshowWidgetState();
 }
 
+/// State class for [SlideshowWidget].
 class _SlideshowWidgetState extends State<SlideshowWidget> {
   final PageController _pageController = PageController();
   int _currentPage = 0;
@@ -103,10 +104,7 @@ class _SlideshowWidgetState extends State<SlideshowWidget> {
     super.initState();
     _images = widget.images;
     _interval = widget.interval;
-
-    if (widget.autoPlay) {
-      Future.delayed(_interval, _nextSlide);
-    }
+    if (widget.autoPlay) Future.delayed(_interval, _nextSlide);
   }
 
   void _nextSlide() {
@@ -114,11 +112,7 @@ class _SlideshowWidgetState extends State<SlideshowWidget> {
     if (_images.length <= 1) return;
 
     _currentPage = (_currentPage + 1) % _images.length;
-    _pageController.animateToPage(
-      _currentPage,
-      duration: const Duration(milliseconds: 500),
-      curve: Curves.easeInOut,
-    );
+    _pageController.animateToPage(_currentPage, duration: const Duration(milliseconds: 500), curve: Curves.easeInOut);
 
     Future.delayed(_interval, _nextSlide);
   }
