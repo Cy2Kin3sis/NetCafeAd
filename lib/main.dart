@@ -1,6 +1,10 @@
+/// main.dart
+///
+/// This file contains the core of the app.
+library;
+
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
 import 'home.dart';
 
 /// Main method
@@ -12,6 +16,8 @@ class NetCafeAd extends StatefulWidget {
   @override
   State<NetCafeAd> createState() => _NetCafeAdState();
 }
+
+/// State class for [NetCafeAd].
 class _NetCafeAdState extends State<NetCafeAd> {
   ThemeMode _themeMode = ThemeMode.light;
 
