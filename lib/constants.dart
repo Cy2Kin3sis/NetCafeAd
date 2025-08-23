@@ -1,3 +1,11 @@
+/// constants.dart
+///
+/// This file contains reusable properties that can be used in other files.
+///
+/// - "sbh" means SizedBox height.
+/// - "sbw" means SizedBox width.
+library;
+
 import 'package:flutter/material.dart';
 
 /* TextStyle */
@@ -40,4 +48,5 @@ TextStyle? largeTitle(BuildContext context) => Theme.of(context).textTheme.title
 /// Medium title font.
 TextStyle? mediumTitle(BuildContext context) => Theme.of(context).textTheme.titleMedium;
 
+/// Theme color
 const Color themeColor = Colors.amber;
