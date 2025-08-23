@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'actuals.dart';
 import 'constants.dart';
 import 'contents.dart';
